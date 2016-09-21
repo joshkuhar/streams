@@ -1,47 +1,29 @@
-//var greeting = require('./abc');
-
-//var fs = require('fs');
-
-// var inFile = fs.createReadStream('abc.js');
-// inFile.on('data', function(chunk) {
-// 	console.log();
-//     console.log(chunk.toString());
-// });
-// 	
-
-// var Readable = require('stream').Readable;
-// var rs = new Readable;
-// rs.push('beep ');
-// rs.push('boop\n');
-// rs.push(null);
-
-// rs.pipe(process.stdout);
-
 var rs = require('./abc');
+//var ws = require('./abc');
+// var c = 97;
 
-// rs.push('beeper\n');
-// rs.push(null);
-// rf.on('data', function(chunk){
-// 	console.log(chunk.toString);
-// })
-
-// var Readable = require('stream').Readable;
-// var rs = Readable();
-
+// rs._read = function() {
+//     rs.push(String.fromCharCode(c++));
+//     if (c > 'z'.charCodeAt(0)) {
+//            rs.push(null);
+//    };
+// };
 var c = 97;
-
-rs._read = function() {
+rs._read = function () {
     rs.push(String.fromCharCode(c++));
-    if (c > 'z'.charCodeAt(0)) {
-           rs.push(null);
-   };
+    if (c > 'z'.charCodeAt(0)) rs.push(null);
 };
-
-//rs.pipe(process.stdout);
-
 rs.on('data', function(chunk) {
 	//console.log();
     console.log(chunk.toString());
 });
+//rs.pipe(process.stdout);
+// ws._write = function (chunk, enc, next) {
+//     console.dir(chunk);
+//     next();
+// };
 
-//rs.resume();
+// process.stdin.pipe(ws);
+
+
+	
