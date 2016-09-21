@@ -1,6 +1,6 @@
 //var greeting = require('./abc');
-//var stream = require('stream');
-// var fs = require('fs');
+
+//var fs = require('fs');
 
 // var inFile = fs.createReadStream('abc.js');
 // inFile.on('data', function(chunk) {
@@ -9,10 +9,17 @@
 // });
 // 	
 
-var Readable = require('stream').Readable;
-var rs = new Readable;
-rs.push('beep ');
-rs.push('boop\n');
-rs.push(null);
+// var Readable = require('stream').Readable;
+// var rs = new Readable;
+// rs.push('beep ');
+// rs.push('boop\n');
+// rs.push(null);
 
-rs.pipe(process.stdout);
+// rs.pipe(process.stdout);
+
+var rf = require('./abc');
+
+rf.push('beeper');
+rf.push(null);
+
+rf.pipe(process.stdout);
