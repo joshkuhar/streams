@@ -2,6 +2,6 @@
 //module.exports = greeting;
 
 var stream = require('stream');
-var rf = new stream.Readable;
+var rs = new stream.Readable;
 
-module.exports = rf;
+module.exports = rs;
